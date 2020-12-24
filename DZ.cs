@@ -32,6 +32,10 @@ public class Song
         genre = g;
         musicians = null;
       }
+  
+      public Song()
+      {
+      }
   }
   
 [Serializable]  
@@ -53,5 +57,19 @@ class Program
   {
     static void Main(string[] args)
     {
-      Person person = new Person("Tom", 29);
+      Album alb = new Album("Tommy", 1929);
+      alb.songs = new Song[6]
+      for (int i = 0; i < length; ++i)
+        {
+         alb.songs[i] = new Song();
+         alb.songs[i].musicians = new Musician("Вячеслав", "Хартов")
+        }
+      
+      XmlSerializer formatter = new XmlSerializer(typeof(Album));
+      using (FileStream fs = new FileStream("alb.xml", FileMode.OpenOrCreate))
+            {
+               formatter.Serialize(fs, alb);
+ 
+                Console.WriteLine("Объект сериализован");
+            }
 }
