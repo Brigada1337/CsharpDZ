@@ -3,7 +3,8 @@ using System.Xml.Serialization;
 
 namespace Variant_F1
 {
-
+  
+[Serializable] 
 public class Musician
   {
       public string fname;
@@ -16,6 +17,7 @@ public class Musician
       }
   }
   
+[Serializable]   
 public class Song
   {
       public string name;
